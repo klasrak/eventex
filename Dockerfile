@@ -21,6 +21,7 @@ RUN apk update \
     openssl-dev \
     musl-dev \
     libffi-dev \
+    postgresql-dev \
     && pip install --no-cache-dir cryptography==2.1.4
 
 COPY pyproject.toml ${WORKDIR}/
@@ -39,7 +40,7 @@ ENV USER=docker \
     GROUP=docker \
     UID=12345 \
     GID=23456 \
-    HOME=/app \
+    HOME=/usr/src/app \
     PYTHONUNBUFFERED=1
 
 WORKDIR ${HOME}
@@ -53,7 +54,9 @@ RUN addgroup --gid "${GID}" "${GROUP}" \
     --ingroup "${GROUP}" \
     --no-create-home \
     --uid "${UID}" \
-    "${USER}"
+    "${USER}" \
+    && apk add --virtual build-dependencies postgresql-dev \
+    bash
 
 # Run as docker user
 USER ${USER}
