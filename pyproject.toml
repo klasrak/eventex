@@ -8,6 +8,7 @@ authors = ["Danilo Augusto <dasf_cm@terra.com.br>"]
 python = "^3.8"
 django = "^3.0.8"
 whitenoise = "^5.1.0"
+python-decouple = "^3.3"
 
 [tool.poetry.dev-dependencies]
 isort = "^5.1.4"
