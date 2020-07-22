@@ -71,6 +71,8 @@ TEMPLATES = [
     },
 ]
 
+ASGI_APPLICATION = "eventex.asgi.application"
+
 WSGI_APPLICATION = "eventex.wsgi.application"
 
 # Database
