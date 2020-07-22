@@ -318,7 +318,7 @@ pip-selfcheck.json
 
 # Docker dbdata
 dbdata
-
+.dbcache
 # Django staticfiles
 staticfiles
 

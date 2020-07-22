@@ -9,6 +9,8 @@ services:
       - .env
     depends_on:
       - db
+    networks:
+        - backend
     command: ['./docker/entrypoint.sh', "db:5432"]
   db:
     image: postgres:12-alpine
@@ -17,4 +19,10 @@ services:
     env_file:
       - .env
     volumes:
-      - ./dbdata:/var/lib/postgresql/data:cached
+      - ./.dbcache/pg/data:/data/db
+    networks:
+        - backend
+
+networks:
+    backend:
+        driver: "bridge"
