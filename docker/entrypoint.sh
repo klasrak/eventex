@@ -13,4 +13,4 @@ done
 sleep 2
 >&2 echo "Postgres is up - executing command"
 
-uvicorn --host=0.0.0.0 "eventex.asgi:application"
+uvicorn --host=0.0.0.0 --reload "eventex.asgi:application"
