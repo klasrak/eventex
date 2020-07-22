@@ -316,4 +316,7 @@ pip-selfcheck.json
 # Ignore all local history of files
 .history
 
+# Docker dbdata
+dbdata
+
 # End of https://www.toptal.com/developers/gitignore/api/python,django,venv,visualstudiocode,pycharm+all
