@@ -22,6 +22,9 @@ services:
       - ./.dbcache/pg/data:/data/db
     networks:
         - backend
+    environment:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
 
 networks:
     backend:
