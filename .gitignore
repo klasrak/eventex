@@ -319,4 +319,7 @@ pip-selfcheck.json
 # Docker dbdata
 dbdata
 
+# Django staticfiles
+staticfiles
+
 # End of https://www.toptal.com/developers/gitignore/api/python,django,venv,visualstudiocode,pycharm+all
