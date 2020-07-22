@@ -23,3 +23,8 @@ venv
 .AppleDouble
 .LSOverride
 ._*
+
+.isort.cfg
+.flake8
+.pre-commit-config.yaml
+.editorconfig
