@@ -11,17 +11,22 @@ def subscribe(request):
     if request.method == "POST":
 
         form = SubscriptionForm(request.POST)
-        form.full_clean()
 
-        body = render_to_string("subscriptions/subscription_email.txt", form.cleaned_data)
+        if form.is_valid():
+            form.full_clean()
 
-        mail.send_mail(
-            "Confirmação de Inscrição",
-            body,
-            "contato@eventex.com.br",
-            ["contato@eventex.com.br", form.cleaned_data["email"]],
-        )
-        return HttpResponseRedirect("/inscricao/")
+            body = render_to_string("subscriptions/subscription_email.txt", form.cleaned_data)
+
+            mail.send_mail(
+                "Confirmação de Inscrição",
+                body,
+                "contato@eventex.com.br",
+                ["contato@eventex.com.br", form.cleaned_data["email"]],
+            )
+            return HttpResponseRedirect("/inscricao/")
+
+        else:
+            return render(request, "subscriptions/subscription_form.html", {"form": form})
 
     else:
 
