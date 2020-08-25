@@ -1,3 +1,5 @@
+from datetime import date
+
 from django.core import mail
 from django.test import TestCase
 
@@ -92,3 +94,10 @@ class SubscribeInvalidPost(TestCase):
     def test_form_has_errors(self):
         form = self.response.context["form"]
         self.assertTrue(form.errors)
+
+
+class SubscribeSuccessMessage(TestCase):
+    def test_message(self):
+        data = dict(name="Danilo Augusto", cpf="12345678901", email="danilo@testmail.com", phone="18-91111-2222")
+        response = self.client.post("/inscricao/", data, follow=True)
+        self.assertContains(response, "Inscrição realizada com sucesso!")
