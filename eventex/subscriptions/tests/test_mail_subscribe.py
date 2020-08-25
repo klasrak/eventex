@@ -21,7 +21,8 @@ class SubscribePostValid(TestCase):
         self.assertEqual(expect, self.email.to)
 
     def test_subscription_email_body(self):
-        self.assertIn("Danilo Augusto", self.email.body)
-        self.assertIn("12345678901", self.email.body)
-        self.assertIn("danilo@testmail.com", self.email.body)
-        self.assertIn("18-91111-2222", self.email.body)
+        contents = ["Danilo Augusto", "12345678901", "danilo@testmail.com", "18-91111-2222"]
+
+        for content in contents:
+            with self.subTest():
+                self.assertIn(content, self.email.body)
