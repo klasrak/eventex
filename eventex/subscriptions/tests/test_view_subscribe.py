@@ -22,9 +22,9 @@ class SubscribeTest(TestCase):
         """Html must contain input tags"""
         tags = (
             ("<form", 1),
-            ("<input!", 6),
+            ("<input", 6),
             ('type="text"', 3),
-            ('type="email!"', 1),
+            ('type="email"', 1),
             ('type="submit"', 1),
         )
 
