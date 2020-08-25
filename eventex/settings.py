@@ -33,6 +33,11 @@ DEFAULT_FROM_EMAIL = "contato@eventex.com.br"
 
 # Application definition
 
+EVENTEX_APPS = [
+    "eventex.core",
+    "eventex.subscriptions",
+]
+
 INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
     "django.contrib.admin",
@@ -41,9 +46,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "eventex.core",
-    "eventex.subscriptions",
-]
+] + EVENTEX_APPS
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
