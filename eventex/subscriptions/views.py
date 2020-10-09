@@ -40,7 +40,7 @@ def create(request):
     # Success feedback
     messages.success(request, "Inscrição realizada com sucesso!")
 
-    return HttpResponseRedirect("/inscricao/")
+    return HttpResponseRedirect("/inscricao/1/")
 
 
 def new(request):
