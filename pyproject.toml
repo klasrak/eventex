@@ -19,7 +19,7 @@ flake8 = "^3.8.3"
 black = "^19.10b0"
 pre-commit = "^2.6.0"
 jupyter = "^1.0.0"
-ipython = "^7.17.0"
+ipython = "^8.10.0"
 django-test-without-migrations = "^0.6"
 
 [tool.black]
